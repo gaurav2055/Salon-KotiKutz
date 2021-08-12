@@ -1,4 +1,5 @@
 function reviewEnter(user) {
+  if (user) {
     let form = `<form class="py-5" id= "review-form">
                         <h1 class="text-center my-2">Review</h1>
                         <div class="form-group">
@@ -20,7 +21,11 @@ function reviewEnter(user) {
                     </form>`;
 
     document.getElementById("review").innerHTML += form;
-
+  }else {
+    document.getElementById(
+        "review"
+    ).innerHTML += `<h4 class="text-center py-5" id="loginReview"><a class="zoom" href="sign_in.html">Login to review</a></h4>`;
+  }
 
     const review_form = document.getElementById("review-form");
 

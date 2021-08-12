@@ -1,0 +1,28 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/accountBg.jpg);
+    background-blend-mode: multiply;
+    background-position: center;
+
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item :hover {
+    color: black !important;
+}
+
+.left {
+    display: inline;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu {
+        border: none;
+    }
+}

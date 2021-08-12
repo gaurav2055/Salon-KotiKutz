@@ -1,0 +1,70 @@
+body {
+    background-color: #e8eddf;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item :hover {
+    color: black !important;
+}
+
+.parallax-window {
+    min-height: 500px;
+    background: transparent;
+}
+
+.serv-contain {
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bottom {
+    background-color: #aa9144;
+    margin: auto;
+}
+
+#booking {
+    margin-top: 10px !important;
+    color: white !important;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.text-body {
+    text-decoration: none !important;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu {
+        border: none;
+    }
+
+    .text-body {
+        margin: 0px 10px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .text-body {
+        margin: 0px 5px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .text-body {
+        font-size: .7rem;
+
+    }
+}

@@ -1,0 +1,209 @@
+body {
+    background-color: #e8eddf;
+}
+
+p {
+    font-size: 0.8rem !important;
+    font-weight: 500;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item :hover {
+    color: black !important;
+}
+
+.nav a {
+    color: black;
+}
+
+.nav .active {
+    color: #aa9144;
+}
+
+.parallax-window {
+    background-image: url(../img/services_male.jpg);
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+.parallax-window1 {
+    background-image: url(../img/page-footer.jpg);
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.services img {
+    width: 100%;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.6);
+    border: 2px solid #aa9144;
+}
+
+.serv-contain {
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.empty {
+    min-height: 50px;
+}
+
+#bottom {
+    background-color: #aa9144;
+    /*    margin: auto;*/
+}
+
+#booking {
+    margin-top: 10px !important;
+    color: white !important;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.text-body {
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    p {
+        font-size: 0.7rem !important;
+    }
+
+    .parallax-window {
+        background-image: url(../img/services_male.jpg);
+        background-size: cover !important;
+    }
+
+    .parallax-window1 {
+        background-image: url(../img/page-footer.jpg);
+        background-size: cover !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu {
+        border: none;
+    }
+
+    .services img {
+        width: 75%;
+    }
+
+    .centered {
+        padding: 10px 0px;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
+
+    h4 {
+        font-size: 2.3rem !important;
+    }
+
+    .text-body {
+        margin: 0px 10px !important;
+    }
+
+    .parallax-window {
+        background-image: url(../img/services_male3.jpg);
+        background-size: cover !important;
+    }
+
+    .parallax-window1 {
+        background-image: url(../img/page-footer3.jpg);
+        background-size: cover !important;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h4 {
+        font-size: 2rem !important;
+    }
+
+    p {
+        font-size: 0.5rem;
+    }
+
+    .text-body {
+        margin: 0px 5px !important;
+    }
+
+    .parallax-window {
+        background-image: url(../img/services_male2.jpg);
+        background-size: cover !important;
+    }
+
+    .parallax-window1 {
+        background-image: url(../img/page-footer2.jpg);
+        background-size: cover !important;
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    .parralax-window {
+        max-height: 300px;
+    }
+
+    p {
+        font-size: 0.65rem !important;
+    }
+
+    .row {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .serv-contain {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    #services {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    #services .row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    h4 {
+        width: 215px;
+    }
+
+    .parallax-window {
+        background-image: url(../img/services_male1.jpg) !important;
+        background-attachment: scroll;
+        background-size: cover !important;
+    }
+
+    .parallax-window1 {
+        background-image: url(../img/page-footer1.jpg) !important;
+        background-attachment: scroll;
+        background-size: cover !important;
+    }
+
+
+}

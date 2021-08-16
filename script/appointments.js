@@ -31,7 +31,7 @@ const appointment = document.getElementById("appointment");
 
 auth.onAuthStateChanged(function (user) {
     if (user != null) {
-        appointment.elements.namedItem("name") = user.displayName;
+        appointment.elements.namedItem("name").value = user.displayName;
         appointment.elements.namedItem("email").value = user.email;
     }
 })
@@ -54,7 +54,21 @@ function bookAppointment(event) {
     var email = appointment.elements.namedItem("email").value;
 
     if (location == "KotiKutz (Dhanori)") {
-        var appointmentReff = db.collection("appointments_shop_1");
+        var shop = "appointments_shop_1";
+    }
+    else if(location == "KotiKutz (Silver Mist socty. Opp Orchid Hospital)") {
+        var shop = "appointments_shop_2";
+    }
+    else if(location == "KotiKutz (Divine Homes .Next to Ramas Furniture Mall)") {
+        var shop = "appointments_shop_3";
+    }
+    else if(location == "Katri Kangi & Me (AEROPOLIS Society)") {
+        var shop = "appointments_shop_4";
+    }
+    else {
+        var shop = "appointments_shop_5";
+    }
+    var appointmentReff = db.collection(shop);
         appointmentReff.where("date", "==", date).where("time", "==", time).get().then((cred) => {
             var num = cred.size;
             if (num < 4) {
@@ -83,127 +97,6 @@ function bookAppointment(event) {
                 alert("That time slot is full for the date");
             }
         })
-    }
-    else if(location == "KotiKutz (Silver Mist socty. Opp Orchid Hospital)") {
-        var appointmentReff = db.collection("appointments_shop_2").doc(date);
-        appointmentReff.where("date", "==", date).where("time", "==", time).get().then((cred) => {
-            var num = cred.size;
-            if (num < 4) {
-                let docName = num + 1;
-                docName = docName.toString();
-                docName += " " + time;
-                appointmentReff.doc(docName).set({
-                                Name: name,
-                                contact: contact,
-                                date: date,
-                                time: time,
-                                gender: gender,
-                                email: email,
-                                loc: location,
-                                service: service,
-                                confirm: "No"
-                
-                            }).then(function(){
-                                appointment_reset();
-                            }).catch(function(error){
-                                alert("There was some error in booking" + error);
-                                console.log(error)
-                            })
-            }else {
-                alert("That time slot is full for the date");
-            }
-        })
-    }
-    else if(location == "KotiKutz (Divine Homes .Next to Ramas Furniture Mall)") {
-        var appointmentReff = db.collection("appointments_shop_3").doc(date);
-        appointmentReff.where("date", "==", date).where("time", "==", time).get().then((cred) => {
-            var num = cred.size;
-            if (num < 4) {
-                let docName = num + 1;
-                docName = docName.toString();
-                docName += " " + time;
-                appointmentReff.doc(docName).set({
-                                Name: name,
-                                contact: contact,
-                                date: date,
-                                time: time,
-                                gender: gender,
-                                email: email,
-                                loc: location,
-                                service: service,
-                                confirm: "No"
-                
-                            }).then(function(){
-                                appointment_reset();
-                            }).catch(function(error){
-                                alert("There was some error in booking" + error);
-                                console.log(error)
-                            })
-            }else {
-                alert("That time slot is full for the date");
-            }
-        })
-    }
-    else if(location == "Katri Kangi & Me (AEROPOLIS Society)") {
-        var appointmentReff = db.collection("appointments_shop_4").doc(date);
-        appointmentReff.where("date", "==", date).where("time", "==", time).get().then((cred) => {
-            var num = cred.size;
-            if (num < 4) {
-                let docName = num + 1;
-                docName = docName.toString();
-                docName += " " + time;
-                appointmentReff.doc(docName).set({
-                                Name: name,
-                                contact: contact,
-                                date: date,
-                                time: time,
-                                gender: gender,
-                                email: email,
-                                loc: location,
-                                service: service,
-                                confirm: "No"
-                
-                            }).then(function(){
-                                appointment_reset();
-                            }).catch(function(error){
-                                alert("There was some error in booking" + error);
-                                console.log(error)
-                            })
-            }else {
-                alert("That time slot is full for the date");
-            }
-        })
-    }
-    else {
-        var appointmentReff = db.collection("appointments_shop_5").doc(date);
-        appointmentReff.where("date", "==", date).where("time", "==", time).get().then((cred) => {
-            var num = cred.size;
-            if (num < 4) {
-                let docName = num + 1;
-                docName = docName.toString();
-                docName += " " + time;
-                appointmentReff.doc(docName).set({
-                                Name: name,
-                                contact: contact,
-                                date: date,
-                                time: time,
-                                gender: gender,
-                                email: email,
-                                loc: location,
-                                service: service,
-                                confirm: "No"
-                
-                            }).then(function(){
-                                appointment_reset();
-                            }).catch(function(error){
-                                alert("There was some error in booking" + error);
-                                console.log(error)
-                            })
-            }else {
-                alert("That time slot is full for the date");
-            }
-        })
-    }
 }
 
 function appointment_reset() {
@@ -233,4 +126,10 @@ function appointment_reset() {
     $("#alertModal").modal("show");
 
     appointment.reset();
+    auth.onAuthStateChanged(function (user) {
+        if (user != null) {
+            appointment.elements.namedItem("name").value = user.displayName;
+            appointment.elements.namedItem("email").value = user.email;
+        }
+    })
 }
